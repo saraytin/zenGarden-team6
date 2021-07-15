@@ -8,6 +8,19 @@
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
 /* basic elements */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300&family=Vollkorn&display=swap');
+
+:root {
+  --heading-font: 'Fira Sans Condensed', sans-serif;
+  --body-font: 'Vollkorn', serif;
+  --background: #0f1a20;
+  --purple: #413c58;
+  --grey-dark: #595959;
+  --grey-light: #c2c2c2;
+  --white: #ffffff;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -16,13 +29,14 @@ body {
   font: 75% georgia, sans-serif;
   line-height: 1.88889;
   color: #555753;
-  background: #fff url(http://csszengarden.com/001/blossoms.jpg) no-repeat bottom right;
+  background: var(--background);
   margin: 0;
   padding: 0;
 }
-p {
+p, li {
   margin-top: 0;
   text-align: justify;
+  color: var(--grey-light);
 }
 h3 {
   font: italic normal 1.4em georgia, sans-serif;
@@ -33,24 +47,28 @@ h3 {
 a:link {
   font-weight: bold;
   text-decoration: none;
-  color: #b7a5df;
+  color: var(--white);
 }
 a:visited {
   font-weight: bold;
   text-decoration: none;
-  color: #d4cddc;
+  color: var(--grey-dark);
 }
 a:hover,
 a:focus,
 a:active {
   text-decoration: underline;
-  color: #9685ba;
+  color: var(--grey-dark);
 }
 abbr {
   border-bottom: none;
 }
 
 /* specific divs */
+
+.intro, .summary, .preamble, .supporting, .explanation, .participation, .benefits {
+  padding: 1rem;
+}
 
 .page-wrapper {
   display: grid;
@@ -131,20 +149,31 @@ abbr {
   grid-row: 1;
 }
 
-.participation {
+.participation, .benefits {
   grid-column: 2;
   grid-row: 1;
 }
 
 .participation h3 {
-  padding-top: 24rem;
+/*   padding-top: 24rem; */
+  padding-top: 18rem;
+  background: url(https://i.imgur.com/5qsgJ0G.jpg) no-repeat top center;
+}
+
+/*  TODO: fix benfits. possible solutions involve nth-child, before/after, etc */
+.participation::after {
+  float: left;
 }
 
 .benefits {
+  clear: both;
+}
+
+/* .benefits {
   grid-column: 2;
   grid-row: 1;
-  margin-top: 50rem;
-}
+  margin-top: 43rem;
+} */
 
 footer {
   grid-column: 1 / 4;
