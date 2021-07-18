@@ -1,0 +1,297 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+/* basic elements */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300&family=Vollkorn&display=swap");
+
+// Variables
+$heading-font: "Fira Sans Condensed", sans-serif;
+$body-font: "Vollkorn", serif;
+$background: #0f1a20;
+$purple: #b08adb;
+$grey-dark: #5c5c5c;
+$grey-light: #ededed;
+$white: #ffffff;
+
+$grid-columns: 3;
+
+// Breakpoints
+$breakpoint-small: 320px;
+$breakpoint-med: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-xlarge: 1400px;
+
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 75% georgia, sans-serif;
+  line-height: 1.88889;
+  color: $purple;
+  background: $background;
+  margin: 0;
+  padding: 0;
+}
+p,
+li {
+  margin-top: 0;
+  text-align: justify;
+  color: $grey-light;
+}
+h3 {
+  font: italic normal 1.4em georgia, sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  color: $purple;
+  line-height: 1.8rem;
+}
+a {
+  &:link {
+    font-weight: bold;
+    text-decoration: none;
+    color: $white;
+  }
+  &:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: $grey-dark;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    color: $grey-dark;
+  }
+}
+abbr {
+  border-bottom: none;
+}
+
+/* specific divs */
+
+.page-wrapper {
+  @media screen and (min-width: $breakpoint-med) {
+    display: grid;
+    grid-template-columns: repeat($grid-columns, 1fr);
+  }
+}
+
+.sidebar {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    position: sticky;
+    z-index: 100;
+  }
+}
+
+.wrapper {
+  @media screen and (min-width: $breakpoint-med) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+  }
+}
+
+.design-archives {
+  @media screen and (min-width: $breakpoint-med) {
+    position: absolute;
+    bottom: 8.1rem;
+    left: 25%;
+  }
+  text-align: center;
+
+  li {
+    list-style: none;
+    text-align: center;
+    @media screen and (min-width: $breakpoint-med) {
+      margin-left: -2.5rem;
+    }
+  }
+}
+
+.zen-resources {
+  @media screen and (min-width: $breakpoint-med) {
+    position: absolute;
+    bottom: 4rem;
+    right: 25%;
+  }
+  text-align: center;
+
+  li {
+    list-style: none;
+    text-align: center;
+    @media screen and (min-width: $breakpoint-med) {
+      margin-left: -2.5rem;
+    }
+  }
+}
+
+.design-selection {
+  text-align: center;
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  h3 {
+    margin-left: 10%;
+  }
+
+  ul {
+    @media screen and (min-width: $breakpoint-med) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  li {
+    list-style: none;
+    text-align: center;
+    @media screen and (min-width: $breakpoint-med) {
+      height: 5rem;
+      margin: 0 1rem;
+      padding: 0.5rem;
+      border: 3px solid $grey-light;
+      border-radius: 5px;
+      background-color: $purple;
+    }
+    @media screen and (min-width: $breakpoint-large) {
+      height: 3rem;
+    }
+  }
+
+  a:nth-of-type(1) {
+    display: block;
+  }
+}
+
+.intro {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+    margin-top: 10rem;
+  }
+  padding: 1rem;
+}
+
+.intro header {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  text-align: center;
+  padding: 1rem;
+}
+
+.summary {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  padding: 1rem;
+}
+
+.preamble {
+  background: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3E%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='300.000000pt' height='201.000000pt' viewBox='0 0 300.000000 196.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cmetadata%3E Created by potrace 1.10, written by Peter Selinger 2001-2011 %3C/metadata%3E%3Crect width='300' height='201' rx='15' fill='%23c2c2c2' /%3E%3Cg transform='translate(0.000000,196.000000) scale(0.100000,-0.100000)' fill='%23000000' stroke='none'%3E%3Cpath d='M730 1944 c-120 -11 -462 -73 -655 -120 l-70 -17 0 -898 0 -899 35 6 c19 3 49 10 65 15 50 14 372 77 490 94 230 35 509 35 650 0 79 -19 204 -77 231 -106 17 -19 18 -19 51 7 217 165 662 167 1363 4 47 -11 88 -20 93 -20 4 0 7 405 7 899 l0 899 -107 25 c-134 31 -333 70 -478 94 -143 22 -561 25 -644 4 -82 -21 -165 -56 -217 -90 -45 -31 -45 -31 -72 -12 -48 33 -129 70 -204 92 -63 19 -102 22 -283 24 -116 1 -230 1 -255 -1z m480 -50 c75 -13 191 -56 237 -87 l49 -33 51 32 c97 63 272 103 444 104 93 0 339 -24 449 -45 14 -3 39 -7 55 -10 41 -6 314 -62 348 -70 l27 -7 0 -795 0 -795 -22 6 c-65 17 -381 78 -504 95 -368 54 -634 31 -798 -70 l-48 -29 -47 28 c-59 37 -138 66 -226 83 -109 22 -398 17 -575 -10 -128 -20 -446 -80 -508 -97 l-22 -6 0 795 0 796 72 16 c40 8 84 18 98 20 14 3 85 17 158 31 74 14 155 28 180 30 26 3 53 7 60 10 7 2 55 7 105 10 51 4 94 9 97 11 6 7 273 -4 320 -13z m-1112 -1744 c10 0 94 16 187 36 302 63 487 86 695 87 213 0 310 -17 434 -79 39 -19 62 -27 51 -18 -11 9 -47 29 -80 44 -222 102 -603 90 -1182 -39 -51 -12 -97 -21 -103 -21 -7 0 -10 271 -10 810 0 533 3 810 10 810 7 0 10 -274 10 -801 l0 -802 32 6 c18 3 87 17 153 31 439 92 730 113 944 70 139 -29 249 -85 249 -127 l0 -25 -47 27 c-218 128 -562 132 -1136 15 -93 -19 -185 -38 -202 -41 l-33 -6 -3 819 -2 819 -3 -828 c-2 -785 -1 -828 16 -823 9 3 85 19 167 36 516 106 825 123 1054 56 93 -26 191 -82 191 -108 0 -15 -6 -13 -42 11 -216 141 -646 140 -1290 -5 -59 -13 -109 -24 -112 -24 -3 0 -6 380 -6 844 0 796 1 845 18 848 16 3 17 -42 20 -809 2 -770 3 -813 20 -813z m2802 819 l0 -811 -23 6 c-13 3 -103 21 -200 41 -581 117 -948 110 -1137 -23 -42 -29 -35 -27 50 15 84 42 160 61 290 74 203 20 544 -19 928 -105 l102 -23 0 818 c0 539 3 819 10 819 7 0 10 -282 10 -825 0 -563 -3 -825 -10 -825 -6 0 -97 18 -203 39 -317 65 -477 84 -687 85 -117 1 -207 -4 -245 -12 -97 -21 -179 -51 -229 -82 -26 -17 -49 -30 -52 -30 -4 0 3 50 8 55 2 1 28 16 58 33 132 73 331 103 557 83 174 -15 346 -41 538 -81 83 -17 165 -34 183 -37 l32 -6 0 802 c0 527 3 801 10 801 7 0 10 -277 10 -811z m60 -44 c0 -465 -2 -845 -5 -845 -3 0 -45 9 -93 19 -48 11 -103 23 -122 26 -19 3 -66 12 -105 20 -406 80 -712 92 -923 35 -122 -33 -219 -91 -206 -124 3 -8 0 -17 -7 -21 -22 -14 0 68 24 89 12 10 49 32 82 47 183 86 429 97 825 38 109 -17 372 -67 488 -94 l22 -5 0 830 c0 547 3 830 10 830 7 0 10 -288 10 -845z'/%3E%3C/g%3E%3C/svg%3E")
+    no-repeat top center;
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 1;
+    grid-row: 3;
+    background-image: none;
+  }
+  padding: 1rem;
+
+  h3 {
+    padding-top: 16rem;
+    @media screen and (min-width: $breakpoint-med) {
+      padding-top: 0;
+    }
+  }
+}
+
+.supporting {
+  @media screen and (min-width: $breakpoint-med) {
+    z-index: -1;
+    grid-column: 1 / 4;
+    grid-row: 1;
+    margin-top: 16rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  padding: 1rem;
+}
+
+.explanation {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: -15rem;
+  }
+  @media screen and (min-width: $breakpoint-xlarge) {
+    margin-top: -10rem;
+  }
+  padding: 1rem;
+}
+
+.participation {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 2;
+    grid-row: 1;
+    background: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3E%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='300.000000pt' height='201.000000pt' viewBox='0 0 300.000000 196.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cmetadata%3E Created by potrace 1.10, written by Peter Selinger 2001-2011 %3C/metadata%3E%3Crect width='300' height='201' rx='15' fill='%23c2c2c2' /%3E%3Cg transform='translate(0.000000,196.000000) scale(0.100000,-0.100000)' fill='%23000000' stroke='none'%3E%3Cpath d='M730 1944 c-120 -11 -462 -73 -655 -120 l-70 -17 0 -898 0 -899 35 6 c19 3 49 10 65 15 50 14 372 77 490 94 230 35 509 35 650 0 79 -19 204 -77 231 -106 17 -19 18 -19 51 7 217 165 662 167 1363 4 47 -11 88 -20 93 -20 4 0 7 405 7 899 l0 899 -107 25 c-134 31 -333 70 -478 94 -143 22 -561 25 -644 4 -82 -21 -165 -56 -217 -90 -45 -31 -45 -31 -72 -12 -48 33 -129 70 -204 92 -63 19 -102 22 -283 24 -116 1 -230 1 -255 -1z m480 -50 c75 -13 191 -56 237 -87 l49 -33 51 32 c97 63 272 103 444 104 93 0 339 -24 449 -45 14 -3 39 -7 55 -10 41 -6 314 -62 348 -70 l27 -7 0 -795 0 -795 -22 6 c-65 17 -381 78 -504 95 -368 54 -634 31 -798 -70 l-48 -29 -47 28 c-59 37 -138 66 -226 83 -109 22 -398 17 -575 -10 -128 -20 -446 -80 -508 -97 l-22 -6 0 795 0 796 72 16 c40 8 84 18 98 20 14 3 85 17 158 31 74 14 155 28 180 30 26 3 53 7 60 10 7 2 55 7 105 10 51 4 94 9 97 11 6 7 273 -4 320 -13z m-1112 -1744 c10 0 94 16 187 36 302 63 487 86 695 87 213 0 310 -17 434 -79 39 -19 62 -27 51 -18 -11 9 -47 29 -80 44 -222 102 -603 90 -1182 -39 -51 -12 -97 -21 -103 -21 -7 0 -10 271 -10 810 0 533 3 810 10 810 7 0 10 -274 10 -801 l0 -802 32 6 c18 3 87 17 153 31 439 92 730 113 944 70 139 -29 249 -85 249 -127 l0 -25 -47 27 c-218 128 -562 132 -1136 15 -93 -19 -185 -38 -202 -41 l-33 -6 -3 819 -2 819 -3 -828 c-2 -785 -1 -828 16 -823 9 3 85 19 167 36 516 106 825 123 1054 56 93 -26 191 -82 191 -108 0 -15 -6 -13 -42 11 -216 141 -646 140 -1290 -5 -59 -13 -109 -24 -112 -24 -3 0 -6 380 -6 844 0 796 1 845 18 848 16 3 17 -42 20 -809 2 -770 3 -813 20 -813z m2802 819 l0 -811 -23 6 c-13 3 -103 21 -200 41 -581 117 -948 110 -1137 -23 -42 -29 -35 -27 50 15 84 42 160 61 290 74 203 20 544 -19 928 -105 l102 -23 0 818 c0 539 3 819 10 819 7 0 10 -282 10 -825 0 -563 -3 -825 -10 -825 -6 0 -97 18 -203 39 -317 65 -477 84 -687 85 -117 1 -207 -4 -245 -12 -97 -21 -179 -51 -229 -82 -26 -17 -49 -30 -52 -30 -4 0 3 50 8 55 2 1 28 16 58 33 132 73 331 103 557 83 174 -15 346 -41 538 -81 83 -17 165 -34 183 -37 l32 -6 0 802 c0 527 3 801 10 801 7 0 10 -277 10 -811z m60 -44 c0 -465 -2 -845 -5 -845 -3 0 -45 9 -93 19 -48 11 -103 23 -122 26 -19 3 -66 12 -105 20 -406 80 -712 92 -923 35 -122 -33 -219 -91 -206 -124 3 -8 0 -17 -7 -21 -22 -14 0 68 24 89 12 10 49 32 82 47 183 86 429 97 825 38 109 -17 372 -67 488 -94 l22 -5 0 830 c0 547 3 830 10 830 7 0 10 -288 10 -845z'/%3E%3C/g%3E%3C/svg%3E")
+      no-repeat top center;
+  }
+  margin-top: 1rem;
+  padding: 1rem;
+
+  h3 {
+    @media screen and (min-width: $breakpoint-med) {
+      padding-top: 16rem;
+    }
+  }
+}
+
+.benefits {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: -3rem;
+  }
+  padding: 1rem;
+}
+
+.requirements {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 3;
+    grid-row: 1;
+    position: relative;
+  }
+  padding: 1rem;
+}
+
+footer {
+  @media screen and (min-width: $breakpoint-med) {
+    grid-column: 1 / 4;
+    text-align: center;
+    margin-top: 15rem;
+  }
+  display: flex;
+  justify-content: center;
+
+  a {
+    height: 2rem;
+    padding: 0 1rem;
+  }
+}
